@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+    <record id="res_users_view_form_custom" model="ir.ui.view">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <!-- add state field in header -->
+                <xpath expr="//header" position="inside">
+                  <button string="Generate Token"
+                                type="object" name="action_generate_password"
+                                attrs="{'invisible': [('access_token', '!=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='action_id']" position="after">
+                  <field name="access_token"/>
+                </xpath>
+              </field>
+            </record>
+		<record  id="data_sync_wizard_view" model="ir.ui.view" >
+      <field name="name">data.sync.wizard.form.view</field>
+      <field name="model">sync.data.wizard</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Data Sync">
+          <header>
+            <button string="Sync Data" name="sync_data" type="object" class="btn-primary"/>
+              
+            <button name="button_test_connection" string="Test Connection" type="object" class="oe_highlight" />
+            <field name="state" widget="statusbar" statusbar_visible="connect,disconnect"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="name" required="1"/>
+                <field name="url" required="1"/>
+                <field name="api_key" required="1"/>
+                <field name="customer_count"/>
+                
+              </group>
+            </group>
+            <notebook>
+              <page string="OTHERS" name="other">
+                <group>
+                  <group>
+                     <button name="button_sync_categ" string="Sync Categories" type="object" class="oe_highlight" />
+
+                     <button name="button_sync_customer" string="Sync Customer" type="object" class="oe_highlight" />
+                      <button name="button_sync_products" string="Sync products" type="object" class="oe_highlight" />
+                      <button name="button_sync_orders" string="Sync Orders" type="object" class="oe_highlight" />
+                      <button name="button_sync_tax" string="Sync Tax" type="object" class="oe_highlight" />
+                      <button name="button_update_product" string="Update Existing product" type="object" class="oe_highlight" />
+                      
+                  </group>
+                  <group>
+                    <button name="button_set_customer_webhook" string="Set Webhook" type="object" class="oe_highlight" />
+                    <button name="button_map_existing_customer" string="Update odoo existing customer" type="object" class="oe_highlight" />
+                    <button name="button_update_odoo_product" string="Update odoo existing product" type="object" class="oe_highlight" />
+                  </group>
+                </group>
+              </page> 
+            </notebook>
+            <!-- <footer>
+              <button string="Cancel" style="margin-left:10px;" class="btn-secondary" special="cancel"/>
+          </footer> -->
+          </sheet>
+        </form>
+      </field>
+    </record>
+  	<record id="contact_details_action" model="ir.actions.act_window">
+      <field name="name">Database Sync</field>
+      <field name="res_model">sync.data.wizard</field>
+      <field name="view_mode">tree,form</field>
+      <field name="target">current</field>
+      <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="menu_admin_settings"
+        name="Settings"
+        parent="base.menu_administration"
+        sequence="99"/>
+
+    <menuitem
+        id="contact_details_tree_view_menu_id"
+        name="Database Sync"
+        parent="menu_admin_settings"
+        action="contact_details_action"
+        sequence="2"/>
+	</data>
+</odoo>

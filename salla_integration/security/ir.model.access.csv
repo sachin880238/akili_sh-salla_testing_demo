@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customermap_customermap,access.customermap.customermap,model_customermap_customermap,base.group_user,1,1,1,1
+access_attributemap_attributemap,access.attributemap.attributemap,model_attributemap_attributemap,base.group_user,1,1,1,1
+access_attributeval_attributeval,access.attributeval.attributeval,model_attributeval_attributeval,base.group_user,1,1,1,1
+access_categorymap_categorymap,access.categorymap.categorymap,model_categorymap_categorymap,base.group_user,1,1,1,1
+access_producttempmap_producttempmap,access.producttempmap.producttempmap,model_producttempmap_producttempmap,base.group_user,1,1,1,1
+access_productmap_productmap,access.productmap.productmap,model_productmap_productmap,base.group_user,1,1,1,1
+access_web_hooks,access.web.hooks,model_web_hooks,base.group_user,1,1,1,1
+access_webhooks_url,access.webhooks.url,model_webhooks_url,base.group_user,1,1,1,1
+access_webhooks_logs,access.webhooks.logs,model_webhooks_logs,base.group_user,1,1,1,1
+access_sale_order_map,access.sale.order.map,model_sale_order_map,base.group_user,1,1,1,1

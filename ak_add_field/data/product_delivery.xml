@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> 
+      <record id="dhl_shipment" model="product.product">
+        <field name="name">DHL Express</field>
+        <field name="list_price">1.0</field>
+        <field name="standard_price">1.0</field>
+        <field name="type">service</field>
+        <field name="salla_id">814202285</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+     </record>
+ 
+      <record id="agent_shipment" model="product.product">
+        <field name="name">Agent Delivery</field>
+        <field name="list_price">1.0</field>
+        <field name="standard_price">1.0</field>
+        <field name="type">service</field>
+        <field name="salla_id">1026614558</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+     </record>
+     
+      <record id="SmSa_shipment" model="product.product">
+        <field name="name">SMSA Shipment</field>
+        <field name="list_price">1.0</field>
+        <field name="standard_price">1.0</field>
+        <field name="type">service</field>
+        <field name="salla_id">1723506348</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+     </record>
+     
+      <record id="self_pickup" model="product.product">
+        <field name="name">Self Pickup</field>
+        <field name="list_price">1.0</field>
+        <field name="standard_price">1.0</field>
+        <field name="type">service</field>
+        <field name="salla_id">1492787992</field>
+        <field name="categ_id" ref="delivery.product_category_deliveries"/>
+     </record>
+    </data>
+</odoo>

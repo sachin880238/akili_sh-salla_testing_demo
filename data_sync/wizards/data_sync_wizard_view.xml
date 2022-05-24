@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    
+
+    <record id="wizard_form_view" model="ir.ui.view">
+      <field name="name">Wizard.form.view</field>
+      <field name="model">wizard.alert</field>
+      <field name="arch" type="xml">
+        <form string="Wizard">
+          <group>
+            <field name="popup"/>
+            <field name="no_of_records"/>
+          </group>
+          <footer>
+            <button string="Close" class="btn-primary" special="cancel"/>
+          </footer>
+        </form>
+      </field>  
+     </record>
+
+    <!--  -->  </data>
+</odoo>

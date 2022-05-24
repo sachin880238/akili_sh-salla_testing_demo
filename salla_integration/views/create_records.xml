@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="webhooks_url_record_1" model="webhooks.url">
+			<field name="name">Create Customer</field>
+			<field name="url">/json-call/customer_create</field>
+			<field name="function_name">customer.created</field>
+		</record>
+		<record id="webhooks_url_record_2" model="webhooks.url">
+			<field name="name">Update Customer</field>
+			<field name="url">/json-call/customer_update</field>
+			<field name="function_name">customer.updated</field>
+		</record>
+		
+		<record id="webhooks_url_record_3" model="webhooks.url">
+			<field name="name">Create Product</field>
+			<field name="url">/json-call/product_create</field>
+			<field name="function_name">product.created</field>
+		</record>
+		<record id="webhooks_url_record_4" model="webhooks.url">
+			<field name="name">Update Product</field>
+			<field name="url">/json-call/product_update</field>
+			<field name="function_name">product.updated</field>
+		</record>
+		<record id="webhooks_url_record_delete_product" model="webhooks.url">
+			<field name="name">Delete Product</field>
+			<field name="url">/json-call/product_delete</field>
+			<field name="function_name">product.deleted</field>
+		</record>
+		<record id="webhooks_url_record_5" model="webhooks.url">
+			<field name="name">Create Order</field>
+			<field name="url">/json-call/order_create</field>
+			<field name="function_name">order.created</field>
+		</record>
+		<record id="webhooks_url_record_6" model="webhooks.url">
+			<field name="name">Update Order</field>
+			<field name="url">/json-call/order_update</field>
+			<field name="function_name">order.updated</field>
+		</record>
+
+
+
+
+		<record id="webhooks_url_record_categ_create" model="webhooks.url">
+			<field name="name">Create Category</field>
+			<field name="url">/json-call/categ_create</field>
+			<field name="function_name">category.created</field>
+		</record>
+		<record id="webhooks_url_record_categ_update" model="webhooks.url">
+			<field name="name">Update Category</field>
+			<field name="url">/json-call/categ_update</field>
+			<field name="function_name">category.updated</field>
+		</record>
+
+		<record id="webhooks_url_record_payment_update" model="webhooks.url">
+			<field name="name">Order payment Updated</field>
+			<field name="url">/json-call/payment_update</field>
+			<field name="function_name">order.payment.updated</field>
+		</record>
+
+
+
+		<record id="webhooks_url_record_shipping_address_update" model="webhooks.url">
+			<field name="name">Shipping Address Update</field>
+			<field name="url">/json-call/shipping_address_update</field>
+			<field name="function_name">order.shipping.address.updated</field>
+		</record>
+
+
+
+		<record id="webhooks_url_record_order_delete" model="webhooks.url">
+			<field name="name">Order Deleted</field>
+			<field name="url">/json-call/order_deleted</field>
+			<field name="function_name">order.deleted</field>
+		</record>
+
+
+
+		<record id="webhooks_url_record_order_shipment_creating" model="webhooks.url">
+			<field name="name">Order Shipment Creating</field>
+			<field name="url">/json-call/order_shipment_creating</field>
+			<field name="function_name">order.shipment.creating</field>
+		</record>
+		<!-- <record id="webhooks_url_record_categ_update" model="webhooks.url">
+			<field name="name">Update Category</field>
+			<field name="url">/json-call/categ_update</field>
+			<field name="function_name">category.updated</field>
+		</record> -->
+
+
+	</data>
+</odoo>

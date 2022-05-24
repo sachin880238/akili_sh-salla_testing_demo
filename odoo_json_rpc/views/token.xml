@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="automatic_remove_old_tokens_cron_actions" model="ir.cron">
+		<field name="name">Remove old Tokens</field>
+		<field name="model_id" ref="model_jsonrpc_token"/>
+		<field name="state">code</field>
+		<field name="code">model.remove_old_tokens_cron()</field>
+		<field name="interval_number">12</field>
+		<field name="interval_type">hours</field>
+		<field name="numbercall">-1</field>
+		<field name="doall" eval="False"/>
+	</record>
+
+	<!-- FORM -->
+	<record id="jsonrpc_token_form" model="ir.ui.view">
+		<field name="name">JSON-RPC Token</field>
+		<field name="model">jsonrpc.token</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="JSON-RPC Token">
+				<sheet>
+					<group>
+						<field name="user_id" />
+						<field name="token" />
+					</group>
+					<group>
+						<field name="actived" />
+						<field name="reg_remote_addr_uses" />
+						<field name="url" />
+						<field name="uses" readonly="True"/>
+					</group>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers"/>
+					<field name="message_ids" widget="mail_thread"/>
+				</div>
+			</form>
+		</field>
+	</record>
+
+	<!-- TREE -->
+	<record id="jsonrpc_token_tree" model="ir.ui.view">
+		<field name="name">JSON-RPC Token</field>
+		<field name="model">jsonrpc.token</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="JSON-RPC Token">
+				<field name="user_id" />
+				<field name="token"/>
+				<field name="actived" />
+			</tree>
+		</field>
+	</record>
+
+	<record id="jsonrpc_token_action" model="ir.actions.act_window">
+		<field name="name">JSON-RPC token</field>
+		<field name="res_model">jsonrpc.token</field>
+		<field name="view_mode">tree,form</field>
+		<!-- <field name="view_type">form</field> -->
+		<field name="context">{}</field>
+	</record>
+
+    <menuitem id="jsonrpc" name="JSON-RPC" parent="base.menu_administration" sequence="100"/>
+	<menuitem id="jsonrpc_token" name="Token" parent="jsonrpc" sequence="10" action="jsonrpc_token_action"/>
+
+</odoo>

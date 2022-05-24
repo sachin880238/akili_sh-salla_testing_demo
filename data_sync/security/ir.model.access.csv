@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sync_data_wizard,access.sync.data.wizard,model_sync_data_wizard,base.group_user,1,1,1,1
+access_wizard_alert,access.wizard.alert,model_wizard_alert,base.group_user,1,1,1,1

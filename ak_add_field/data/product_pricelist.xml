@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1"> 
+    
+      <record id="list_arab_sar" model="product.pricelist">
+            <field name="name">Salla SAR</field> 
+            <field name="sequence">3</field>
+            <field name="currency_id" ref="base.SAR"/>
+      </record>
+    
+      <record id="list_arab_aed" model="product.pricelist">
+            <field name="name">Salla AED</field> 
+            <field name="sequence">4</field>
+            <field name="currency_id" ref="base.AED"/>
+      </record>
+      
+      <record id="list_arab_kwd" model="product.pricelist">
+            <field name="name">Salla KWD</field> 
+            <field name="sequence">3</field>
+            <field name="currency_id" ref="base.KWD"/>
+      </record>
+      
+      <record id="list_arab_qar" model="product.pricelist">
+            <field name="name">Salla QAR</field> 
+            <field name="sequence">3</field>
+            <field name="currency_id" ref="base.QAR"/>
+      </record>
+      
+      <record id="list_arab_bhd" model="product.pricelist">
+            <field name="name">Salla BHD</field> 
+            <field name="sequence">3</field>
+            <field name="currency_id" ref="base.BHD"/>
+      </record>
+    
+      <record id="list_arab_omr" model="product.pricelist">
+            <field name="name">Salla OMR</field> 
+            <field name="sequence">3</field>
+            <field name="currency_id" ref="base.OMR"/>
+      </record>
+    
+    
+    </data>
+</odoo>
